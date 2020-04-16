@@ -1,7 +1,7 @@
 {
-  "name": "CHANGE_ME_PACKAGE_NAME",
+  "name": "base-serverless-plugin",
   "version": "0.0.0",
-  "description": "",
+  "description": "Base Serverless Class",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,7 +16,7 @@
     "release:major": "npm run release -- --release-as major",
     "release:minor": "npm run release -- --release-as minor",
     "release:patch": "npm run release -- --release-as patch",
-    "unpublish": "npx force-unpublish CHANGE_ME_PACKAGE_NAME 'npmrc remove module'"
+    "unpublish": "npx force-unpublish base-serverless-plugin 'npmrc remove module'"
   },
   "husky": {
     "hooks": {
@@ -26,7 +26,10 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "4.17.15",
+    "ramda": "0.27.0"
+  },
   "devDependencies": {
     "@commitlint/config-conventional": "8.3.4",
     "babel-eslint": "10.1.0",
@@ -40,7 +43,6 @@
     "eslint-plugin-react": "7.19.0",
     "husky": "4.2.3",
     "lint-staged": "10.0.8",
-    "npx": "10.2.2",
     "prettier": "2.0.1",
     "standard-version": "7.1.0"
   }
