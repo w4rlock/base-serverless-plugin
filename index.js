@@ -40,11 +40,10 @@ class BasePlugin {
    * Get user config value.. from env,cmd-arg or serverless.yml value
    *
    * @param {string} field config field
-   * @param {boolean } required=true launch exception if required and value is missing
    * @param {object} defaultValue=undefined value by default to return
    * @returns {object} return value
    */
-  getConf(field, required = true, defaultValue = undefined) {
+  getConf(field, defaultValue = undefined) {
     /* eslint no-underscore-dangle: ["error", { "allow": ["__"] }] */
     const replaceDotPath = R.replace(/\./g, R.__);
     const fromEnv = (k) => process.env[k];
@@ -71,7 +70,9 @@ class BasePlugin {
     val = fromYaml(k);
     if (checkVal(val)) return fixVal(val);
 
-    if (required && !defaultValue) {
+    // if the caller function send one argument the field is required
+    // if ... send two argument send default value when value is missing
+    if (arguments.length === 1) {
       throw new Error(
         `Property value for '${key}' is missing. Please, check your serverless.yml'`
       );
