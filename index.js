@@ -32,8 +32,10 @@ class BasePlugin {
    * @param {string} entity to log
    */
   log(entity) {
-    const str = R.when(R.is(Object), JSON.stringify, entity);
-    this.serverless.cli.log(`${this.logPreffix} ${str}`);
+    if (!_.isEmpty(entity)) {
+      const str = R.when(R.is(Object), JSON.stringify, entity);
+      this.serverless.cli.log(`${this.logPreffix} ${str}`);
+    }
   }
 
   /**
