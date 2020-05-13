@@ -28,6 +28,15 @@ class BasePlugin {
   }
 
   /**
+   * Get Current Cloud Formation Stack Name
+   *
+   * @returns {string} Cloud Formation Stack Name
+   */
+  getStackName() {
+    this.serverless.getProvider('aws').naming.getStackName();
+  }
+
+  /**
    * Log to console
    * @param {string} entity to log
    */
