@@ -33,16 +33,20 @@ class BasePlugin {
    * @returns {string} Cloud Formation Stack Name
    */
   getStackName() {
-    this.serverless.getProvider('aws').naming.getStackName();
+    return this.serverless.getProvider('aws').naming.getStackName();
   }
 
   /**
    * Log to console
+   *
    * @param {string} entity to log
+   * @param {number} indent=0 indent to JSON stringify
    */
-  log(entity) {
+  log(entity, indent = 0) {
     if (!_.isEmpty(entity)) {
-      const str = R.when(R.is(Object), JSON.stringify, entity);
+      const str = _.isObject(entity)
+        ? JSON.stringify(entity, null, indent)
+        : entity;
       this.serverless.cli.log(`${this.logPreffix} ${str}`);
     }
   }
