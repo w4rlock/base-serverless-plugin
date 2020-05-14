@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/w4rlock/base-serverless-plugin/compare/0.1.6...0.1.7) (2020-05-14)
+
+
+### Bug Fixes
+
+* stackName() and log pretty ([2bb9986](https://github.com/w4rlock/base-serverless-plugin/commit/2bb99860ed8747751a3bbdb9dcd0a91d900c5a77))
+
 ### [0.1.6](https://github.com/w4rlock/base-serverless-plugin/compare/0.1.5...0.1.6) (2020-05-13)
 
 
