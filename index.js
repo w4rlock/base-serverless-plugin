@@ -23,7 +23,7 @@ class BasePlugin {
    * @returns {boolean} if plugin is disabled based on user config
    */
   isPluginDisabled() {
-    const disabled = this.getConf('disabled', false, false);
+    const disabled = this.getConf('disabled', false);
     return (_.isBoolean(disabled) && disabled) || disabled === 'true';
   }
 
