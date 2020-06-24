@@ -37,6 +37,24 @@ class BasePlugin {
   }
 
   /**
+   * Get current serverless aws Region
+   *
+   * @returns {string} aws region
+   */
+  getRegion() {
+    return this.serverless.getProvider('aws').getRegion();
+  }
+
+  /**
+   * Get current serverless stage
+   *
+   * @returns {string} stage (ex. develop, testing, production)
+   */
+  getStage() {
+    return this.serverless.getProvider('aws').getStage();
+  }
+
+  /**
    * Log to console
    *
    * @param {string} entity to log
