@@ -1,5 +1,4 @@
 const _ = require('lodash');
-const R = require('ramda');
 
 class BasePlugin {
   /**
@@ -101,7 +100,7 @@ class BasePlugin {
    */
   getConf(field, defaultValue = undefined) {
     /* eslint no-underscore-dangle: ["error", { "allow": ["__"] }] */
-    const replaceDotPath = R.replace(/\./g, R.__);
+    const replaceDot = (char, key) => key.replace(/\./g, char);
     const fromEnv = (k) => process.env[k];
     const fromCmdArg = (k) => this.options[k];
     const fromYaml = (k) => _.get(this.serverless, `service.custom.${k}`);
@@ -114,11 +113,11 @@ class BasePlugin {
 
     const key = `${this.usrCustomConfig}.${field}`;
 
-    let k = replaceDotPath('-')(key);
+    let k = replaceDot('-', key);
     let val = fromCmdArg(k);
     if (checkVal(val)) return fixVal(val);
 
-    k = replaceDotPath('_')(key);
+    k = replaceDot('_', key);
     val = fromEnv(k.toUpperCase());
     if (checkVal(val)) return fixVal(val);
 
