@@ -65,8 +65,31 @@ class BasePlugin {
       const str = _.isObject(entity)
         ? JSON.stringify(entity, null, indent)
         : entity;
+
       this.serverless.cli.log(`${this.logPreffix} ${str}`);
     }
+  }
+
+  /**
+   * Add Serverless Plugins to LifeCycle
+   *
+   * @param {object | array} oneOrMorePlugins one o more plugins
+   * @param {boolean} afterMe = true add plugins after me
+   */
+  addPlugins(oneOrMorePlugins, afterMe = true) {
+    const plugs = [].concat(oneOrMorePlugins);
+    _.each(plugs, (p) => {
+      this.serverless.pluginManager.addPlugin(p);
+
+      // only when it is true
+      if (afterMe === true) {
+        const { plugins } = this.serverless.pluginManager;
+        const { asyncInit } = plugins[plugins.length - 1];
+        if (_.isFunction(asyncInit)) {
+          asyncInit();
+        }
+      }
+    });
   }
 
   /**
