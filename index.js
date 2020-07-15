@@ -112,7 +112,7 @@ class BasePlugin {
     };
 
     let key = '';
-    if (_.isEmpty(this.useConfigPreffix)) {
+    if (!_.isEmpty(this.useConfigPreffix)) {
       key = `${this.useConfigPreffix}.`;
     }
     key += field;
