@@ -7,13 +7,13 @@ class BasePlugin {
    * @param {object} serverless Serverless instance
    * @param {object} options object
    * @param {string} logPreffix console log preffixer
-   * @param {string} usrCustomConfig Serverless yml root key user config
+   * @param {string} useConfigPreffix Serverless yml root key user config
    */
-  constructor(serverless, options, logPreffix, usrCustomConfig) {
+  constructor(serverless, options, logPreffix, useConfigPreffix = '') {
     this.options = options;
     this.serverless = serverless;
     this.logPreffix = logPreffix;
-    this.usrCustomConfig = usrCustomConfig;
+    this.useConfigPreffix = useConfigPreffix;
   }
 
   /**
@@ -111,7 +111,11 @@ class BasePlugin {
       return v;
     };
 
-    const key = `${this.usrCustomConfig}.${field}`;
+    let key = '';
+    if (_.isEmpty(this.useConfigPreffix)) {
+      key = `${this.useConfigPreffix}.`;
+    }
+    key += field;
 
     let k = replaceDot('-', key);
     let val = fromCmdArg(k);
