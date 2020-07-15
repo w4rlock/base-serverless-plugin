@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/w4rlock/base-serverless-plugin/compare/0.3.1...0.3.2) (2020-07-15)
+
+
+### Bug Fixes
+
+* update libs and add customConfigPreffix as optional flag ([9a0a6a4](https://github.com/w4rlock/base-serverless-plugin/commit/9a0a6a469f9594f8ab69705552fbb48f4fd9d59a))
+
 ### [0.3.1](https://github.com/w4rlock/base-serverless-plugin/compare/0.3.0...0.3.1) (2020-07-13)
 
 
