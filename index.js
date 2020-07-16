@@ -139,6 +139,56 @@ class BasePlugin {
 
     return defaultValue;
   }
+
+  /**
+   * Inject default config to serverless custom config (util for inject pre-configured plugins)
+   *
+   * @param {object} config defaults config
+   */
+  addDefaultCustomConfig(config) {
+    _.defaultsDeep(this.serverless.service.custom, config);
+  }
+
+  /**
+   * Inject default config to serverless provider config
+   *
+   * @param {object} config defaults config
+   */
+  addDefaultProviderConfig(config) {
+    _.defaultsDeep(this.serverless.service.provider, config);
+  }
+
+  /**
+   * Merge resources to Cloud Formation Resources
+   *
+   * @param {array|object} resource resources to add
+   */
+  mergeCFormationResources(resource) {
+    const resources = [].concat(resource);
+    const cf = this.serverless.service.provider.compiledCloudFormationTemplate;
+    const allUsrRes = _.get(this.serverless, 'service.resources.Resources', {});
+
+    resources.forEach((res) => {
+      // extends template base support
+      if (!_.isEmpty(res.Resources)) {
+        // iteration object resources keys
+        _.forEach(res.Resources, (val, key) => {
+          const baseRes = res.Resources[key];
+          const usrRes = allUsrRes[key];
+          // user can override all templates properties
+          if (!_.isEmpty(usrRes)) {
+            _.merge(baseRes, usrRes);
+          }
+        });
+
+        _.merge(cf.Resources, res.Resources);
+      }
+
+      if (!_.isEmpty(res.Outputs)) {
+        _.merge(cf.Outputs, res.Outputs);
+      }
+    });
+  }
 }
 
 module.exports = BasePlugin;
