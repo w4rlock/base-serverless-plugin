@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/w4rlock/base-serverless-plugin/compare/0.3.3...0.4.0) (2020-07-16)
+
+
+### Features
+
+* add new merge methods ([5480c97](https://github.com/w4rlock/base-serverless-plugin/commit/5480c97ab67d23f25f47a15a4937632be48ac595))
+
 ### [0.3.3](https://github.com/w4rlock/base-serverless-plugin/compare/0.3.2...0.3.3) (2020-07-15)
 
 
