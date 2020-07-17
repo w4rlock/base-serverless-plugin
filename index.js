@@ -45,6 +45,15 @@ class BasePlugin {
   }
 
   /**
+   * Get Serverless Service Name
+   *
+   * @returns {string} service name
+   */
+  getServiceName() {
+    return this.serverless.service.getServiceName();
+  }
+
+  /**
    * Get current serverless stage
    *
    * @returns {string} stage (ex. develop, testing, production)
