@@ -1,6 +1,6 @@
 {
   "name": "base-serverless-plugin",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Base Serverless Class",
   "main": "index.js",
   "scripts": {
