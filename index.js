@@ -155,7 +155,7 @@ class BasePlugin {
    * @param {object} config defaults config
    */
   addDefaultCustomConfig(config) {
-    _.defaultsDeep(this.serverless.service.custom, config);
+    _.defaultsDeep(this.serverless.service, { custom: config });
   }
 
   /**
@@ -164,7 +164,7 @@ class BasePlugin {
    * @param {object} config defaults config
    */
   addDefaultProviderConfig(config) {
-    _.defaultsDeep(this.serverless.service.provider, config);
+    _.defaultsDeep(this.serverless.service, { provider: config });
   }
 
   /**
