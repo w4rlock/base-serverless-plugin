@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/w4rlock/base-serverless-plugin/compare/0.4.0...0.5.0) (2020-07-17)
+
+
+### Features
+
+* add service name method ([36ec16f](https://github.com/w4rlock/base-serverless-plugin/commit/36ec16f562dc5d243c19cb8541aba72c53d00541))
+
+
+### Bug Fixes
+
+* update libs ([4a8bc1e](https://github.com/w4rlock/base-serverless-plugin/commit/4a8bc1efa210fa626c2303b65044c811264208cb))
+
 ## [0.4.0](https://github.com/w4rlock/base-serverless-plugin/compare/0.3.3...0.4.0) (2020-07-16)
 
 
