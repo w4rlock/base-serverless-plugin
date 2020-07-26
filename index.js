@@ -63,6 +63,16 @@ class BasePlugin {
   }
 
   /**
+   * Dispatch any plugin hook.
+   *
+   * @param {string} hook plugin hook ex. before:some:create
+   * @returns {any}
+   */
+  async dispatchHook(hook) {
+    return this.serverless.pluginManager.spawn(hook);
+  }
+
+  /**
    * Log to console
    *
    * @param {string} entity to log
