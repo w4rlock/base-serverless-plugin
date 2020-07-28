@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.3](https://github.com/w4rlock/base-serverless-plugin/compare/0.5.2...0.5.3) (2020-07-28)
+
+
+### Features
+
+* add cloud formation template ([9ef8bf5](https://github.com/w4rlock/base-serverless-plugin/commit/9ef8bf537fa6ecd3135b24a48b10260269ad3b6c))
+
 ### [0.5.2](https://github.com/w4rlock/base-serverless-plugin/compare/0.5.1...0.5.2) (2020-07-26)
 
 
