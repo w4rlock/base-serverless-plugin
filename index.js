@@ -63,6 +63,15 @@ class BasePlugin {
   }
 
   /**
+   * Get CloudFormation compilated template
+   *
+   * @returns {object} js config cloudformation
+   */
+  getCompiledTemplate(){
+    return this.serverless.service.provider.compiledCloudFormationTemplate;
+  }
+
+  /**
    * Dispatch any plugin hook.
    *
    * @param {string} hook plugin hook ex. before:some:create
