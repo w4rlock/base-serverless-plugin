@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.4](https://github.com/w4rlock/base-serverless-plugin/compare/0.5.3...0.5.4) (2020-08-07)
+
+
+### Features
+
+* add aws shortcut to perform request ([6baee91](https://github.com/w4rlock/base-serverless-plugin/commit/6baee91458e3e2736c87135187bf3849e3fdce03))
+
 ### [0.5.3](https://github.com/w4rlock/base-serverless-plugin/compare/0.5.2...0.5.3) (2020-07-28)
 
 
