@@ -14,6 +14,7 @@ class BasePlugin {
     this.serverless = serverless;
     this.logPreffix = logPreffix;
     this.useConfigPreffix = useConfigPreffix;
+    this.aws = this.serverless.getProvider('aws');
   }
 
   /**
@@ -67,7 +68,7 @@ class BasePlugin {
    *
    * @returns {object} js config cloudformation
    */
-  getCompiledTemplate(){
+  getCompiledTemplate() {
     return this.serverless.service.provider.compiledCloudFormationTemplate;
   }
 
