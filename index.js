@@ -112,9 +112,9 @@ class BasePlugin {
       // only when it is true
       if (afterMe === true) {
         const { plugins } = this.serverless.pluginManager;
-        const { asyncInit } = plugins[plugins.length - 1];
-        if (_.isFunction(asyncInit)) {
-          asyncInit();
+        const lastIndex = plugins.length - 1;
+        if (_.isFunction(plugins[lastIndex].asyncInit)) {
+          plugins[lastIndex].asyncInit();
         }
       }
     });
