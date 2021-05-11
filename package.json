@@ -27,7 +27,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "4.17.19"
+    "lodash": "4.17.21"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "8.3.4",
